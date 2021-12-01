@@ -1,38 +1,195 @@
 .App {
-  text-align: center;
+    padding: 50px 20px;
+    margin: 10px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.searchWrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.search {
+    position: relative;
+    width: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.form {
+    max-width: 500px;
+    width: 100%;
+    margin-right: 30px;
+    position: relative;
 }
 
-.App-link {
-  color: #61dafb;
+
+.error {
+    position: absolute;
+    top: -24px;
+    width: 100%;
+    color: orangered;
+    text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.search input {
+    padding: 0 10px;
+    width: 100%;
+    height: 34px;
+    border: 2px solid black;
+    border-radius: 4px;
 }
+
+.dropdown {
+    width: 100%;
+    position: absolute;
+    z-index: 100;
+}
+
+.search.open ul {
+    width: 100%;
+    display: block;
+}
+
+.search ul {
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background: gainsboro;
+    max-height: 152px;
+    overflow-y: scroll;
+
+}
+
+.search li {
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+.updateButton {
+    font-size: 14px;
+    line-height: 1;
+    font-weight: bold;
+    border: 2px solid grey;
+    border-radius: 5px;
+}
+
+.updateButton label {
+    width: 190px;
+    padding: 5px 15px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.updateButton p {
+    margin: 0;
+}
+
+.updateButton [type="checkbox"] {
+    width: 15px;
+    height: 20px;
+    margin: 0 0 0 5px;
+}
+
+/* cities array */
+.citiesList {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+
+.citiesItem {
+    padding: 10px 10px 15px;
+    font-size: 12px;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.citiesItem p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.citiesItem span {
+    margin-left: 5px;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.button {
+    margin-right: 10px;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.4);
+    transition: box-shadow 0.2s linear;
+    cursor: pointer;
+}
+
+.button:active {
+    border: none;
+    box-shadow: none;
+}
+
+.red {
+    background-color: orangered;
+    color: white;
+}
+
+.green {
+    background-color: forestgreen;
+    color: white;
+}
+
+@media screen and (min-width: 1480px) {
+    .citiesList {
+        grid-template-columns: repeat(3, 450px);
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .citiesList {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .App {
+        padding: 40px 20px 20px;
+        margin: 0;
+    }
+
+    .searchWrap {
+        flex-wrap: wrap;
+    }
+
+    .form {
+        max-width: 100%;
+        width: 100%;
+        margin-right: 0;
+        order: 2;
+    }
+
+    .updateButton {
+        margin-bottom: 25px;
+    }
+
+    .citiesList {
+        grid-template-columns: 1fr;
+        grid-gap: 15px;
+    }
+}
+
