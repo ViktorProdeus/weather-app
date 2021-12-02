@@ -1,10 +1,11 @@
 import React from 'react';
+import ButtonMui from '@mui/material/Button';
 
-const Button = ({className, type, name, callback}) => {
+const Button = ({size, color, type, name, callback, variant}) => {
     return (
-        <button className={className} type={type} onClick={callback}>
+        <ButtonMui variant={variant} size={size} color={color} type={type} onClick={callback}>
             {name}
-        </button>
+        </ButtonMui>
     );
 };
 

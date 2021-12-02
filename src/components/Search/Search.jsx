@@ -1,5 +1,6 @@
 import cities from "../../dataJson/cities.json";
 import { filterCities } from "../../helpers/helpers";
+import { TextField, Typography } from "@mui/material";
 
 
 const SearchField = ({searchRef, searchQuery, setSearchQuery, isOpen, dropdownIsOpen, addToListCallback, error}) => {
@@ -11,13 +12,14 @@ const SearchField = ({searchRef, searchQuery, setSearchQuery, isOpen, dropdownIs
 
     return (
         <form className="form" onSubmit={onFormSubmit}>
-            <div className="error">{error && error}</div>
+            <Typography sx={{ fontSize: 16}} className="error">{error && error}</Typography>
             <div ref={searchRef} className={isOpenClass}>
-                <input
+                <TextField
+                    label="Выбрать город"
+                    fullWidth
                     onFocus={() => dropdownIsOpen(true)}
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.currentTarget.value)}
-                    type="text"
                     placeholder="Выбрать город"
                     name="city"
                     autoComplete="off"
@@ -26,7 +28,7 @@ const SearchField = ({searchRef, searchQuery, setSearchQuery, isOpen, dropdownIs
                 <div className="dropdown">
                     <ul>
                         {filteredCities.map((city, index) => (
-                            <li onClick={addToListCallback} key={index} value={city.name}>{city.name}</li>
+                            <Typography component="li" onClick={addToListCallback} key={index} value={city.name} paddingLeft={1}>{city.name}</Typography>
                         ))}
                     </ul>
                 </div>

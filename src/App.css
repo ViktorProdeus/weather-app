@@ -30,14 +30,6 @@
     text-align: center;
 }
 
-.search input {
-    padding: 0 10px;
-    width: 100%;
-    height: 34px;
-    border: 2px solid black;
-    border-radius: 4px;
-}
-
 .dropdown {
     width: 100%;
     position: absolute;
@@ -74,7 +66,8 @@
 }
 
 .updateButton label {
-    width: 190px;
+    width: 224px;
+    height: 100%;
     padding: 5px 15px;
     display: flex;
     align-items: center;
@@ -108,6 +101,7 @@
     text-align: center;
     border: 1px solid black;
     border-radius: 5px;
+    background-color: var(--ciy-bg-color);
 }
 
 .citiesItem p {
@@ -121,37 +115,10 @@
     margin-left: 5px;
 }
 
-.buttons {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-}
-
-.button {
+.citiesItem button {
     margin-right: 10px;
-    padding: 5px 15px;
-    border: none;
-    border-radius: 5px;
-    box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.4);
-    transition: box-shadow 0.2s linear;
-    cursor: pointer;
 }
 
-.button:active {
-    border: none;
-    box-shadow: none;
-}
-
-.red {
-    background-color: orangered;
-    color: white;
-}
-
-.green {
-    background-color: forestgreen;
-    color: white;
-}
 
 @media screen and (min-width: 1480px) {
     .citiesList {

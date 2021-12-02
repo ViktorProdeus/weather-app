@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { changeChecked } from "../../bll/citiesReducer";
+import { Checkbox, Typography } from "@mui/material";
 
 const UpdateButton = () => {
     const dispatch = useDispatch()
@@ -9,10 +10,10 @@ const UpdateButton = () => {
     return (
         <div className="updateButton">
             <label>
-                Автообновление 5с
+                <Typography>Автообновление 5с</Typography>
 
-                <input
-                    type="checkbox"
+                <Checkbox
+                    color="primary"
                     checked={checked}
                     onChange={onChangeCallback}
                 />
