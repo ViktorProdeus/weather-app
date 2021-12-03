@@ -13,8 +13,8 @@ export const filterCities = (cities, query) => {
 // convert response to dataTime
 export const getLocalDate = (value) => {
     const ONE_SECOND = 1000;
-    const day = new Date(value).getDay();
-    value *= ONE_SECOND;
+    value *= ONE_SECOND
+    const day = new Date(value).getDate();
     const monthArr = ["Января", "Февраля", "Марта", "Апреля", "Мая", "Июня", "Июля", "Августа", "Сентября", "Октября", "Ноября", "Декабря",];
     const month = monthArr[new Date(value).getMonth()];
     const year = new Date(value).getFullYear();
