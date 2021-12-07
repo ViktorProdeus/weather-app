@@ -57,7 +57,7 @@ const App = () => {
     useEffect(() => {
         let timerID;
 
-        if(checked) {
+        if (checked) {
             timerID = setTimeout(updateCitiesList, FIVE_SECONDS);
         }
 
@@ -81,7 +81,7 @@ const App = () => {
                 <UpdateButton />
             </div>
 
-            <CitiesList cities={cities} setMessageError={setMessageError}/>
+            <CitiesList cities={cities} setMessageError={setMessageError} />
         </div>
     );
 };

@@ -12,7 +12,7 @@ const SearchField = ({searchRef, searchQuery, setSearchQuery, isOpen, dropdownIs
 
     return (
         <form className="form" onSubmit={onFormSubmit}>
-            <Typography sx={{ fontSize: 16}} className="error">{error && error}</Typography>
+            <Typography sx={{fontSize: 16}} className="error">{error}</Typography>
             <div ref={searchRef} className={isOpenClass}>
                 <TextField
                     label="Выбрать город"
@@ -28,7 +28,8 @@ const SearchField = ({searchRef, searchQuery, setSearchQuery, isOpen, dropdownIs
                 <div className="dropdown">
                     <ul>
                         {filteredCities.map((city, index) => (
-                            <Typography component="li" onClick={addToListCallback} key={index} value={city.name} paddingLeft={1}>{city.name}</Typography>
+                            <Typography component="li" onClick={addToListCallback} key={index} value={city.name}
+                                        paddingLeft={1}>{city.name}</Typography>
                         ))}
                     </ul>
                 </div>

@@ -4,7 +4,7 @@ import { citiesReducer } from "./citiesReducer";
 
 
 const rootReducer = combineReducers({
-  citiesReducer,
+    citiesReducer,
 });
 
 const persistedState = localStorage.getItem('reduxState')
